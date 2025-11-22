@@ -1,0 +1,32 @@
+{
+  "name": "@interweb/http-errors",
+  "version": "0.1.1",
+  "author": "Dan Lynch <pyramation@gmail.com>",
+  "description": "http errors",
+  "main": "index.js",
+  "module": "esm/index.js",
+  "types": "index.d.ts",
+  "homepage": "https://github.com/hyperweb-io/schema-typescript",
+  "license": "SEE LICENSE IN LICENSE",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperweb-io/schema-typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/hyperweb-io/schema-typescript/issues"
+  },
+  "scripts": {
+    "copy": "copyfiles -f ../../LICENSE README.md package.json dist",
+    "clean": "rimraf dist/**",
+    "prepare": "npm run build",
+    "build": "npm run clean; tsc; tsc -p tsconfig.esm.json; npm run copy",
+    "lint": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": []
+}

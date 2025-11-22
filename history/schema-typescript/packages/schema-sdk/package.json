@@ -1,0 +1,50 @@
+{
+  "name": "schema-sdk",
+  "version": "0.14.0",
+  "description": "Convert JSON Schema OpenAPI Spec to TypeScript Clients",
+  "author": "Dan Lynch <pyramation@gmail.com>",
+  "homepage": "https://github.com/hyperweb-io/schema-typescript#readme",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "index.js",
+  "module": "esm/index.js",
+  "types": "index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperweb-io/schema-typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/hyperweb-io/schema-typescript/issues"
+  },
+  "scripts": {
+    "copy": "copyfiles -f ../../LICENSE README.md package.json dist",
+    "clean": "rimraf dist/**",
+    "prepare": "npm run build",
+    "build": "npm run clean; tsc; tsc -p tsconfig.esm.json; npm run copy",
+    "lint": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.24.4",
+    "@babel/types": "^7.24.0",
+    "@interweb-utils/casing": "^0.2.0",
+    "@interweb/fetch-api-client": "^0.6.1",
+    "deepmerge": "^4.3.1",
+    "fast-json-patch": "^3.1.1",
+    "schema-typescript": "^0.12.1"
+  },
+  "keywords": [
+    "jsonschema",
+    "schema",
+    "typescript",
+    "swagger",
+    "openapi"
+  ],
+  "devDependencies": {
+    "jest-diff": "^30.0.4"
+  }
+}
