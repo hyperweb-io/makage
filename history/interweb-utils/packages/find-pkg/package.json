@@ -1,0 +1,32 @@
+{
+  "name": "@interweb/find-pkg",
+  "version": "0.5.0",
+  "author": "Dan Lynch <pyramation@gmail.com>",
+  "description": "Find the package.json file from within a build/package",
+  "main": "index.js",
+  "module": "esm/index.js",
+  "types": "index.d.ts",
+  "homepage": "https://github.com/cosmology-tech/interweb-utils",
+  "license": "SEE LICENSE IN LICENSE",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cosmology-tech/interweb-utils"
+  },
+  "bugs": {
+    "url": "https://github.com/cosmology-tech/interweb-utils/issues"
+  },
+  "scripts": {
+    "copy": "copyfiles -f ../../LICENSE README.md package.json dist",
+    "clean": "rimraf dist/**",
+    "prepare": "npm run build",
+    "build": "npm run clean; tsc; tsc -p tsconfig.esm.json; npm run copy",
+    "lint": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": []
+}
