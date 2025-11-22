@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Object Path Operations get should retrieve a value at a given path 1`] = `
+{
+  "user": {
+    "address": {
+      "city": "Anytown",
+      "street": "123 Main St",
+    },
+    "hobbies": [
+      "reading",
+      "gaming",
+      "hiking",
+    ],
+    "name": "John Doe",
+  },
+}
+`;
+
+exports[`Object Path Operations get should return undefined for non-existent paths 1`] = `
+{
+  "user": {
+    "address": {
+      "city": "Anytown",
+      "street": "123 Main St",
+    },
+    "hobbies": [
+      "reading",
+      "gaming",
+      "hiking",
+    ],
+    "name": "John Doe",
+  },
+}
+`;
+
+exports[`Object Path Operations has should return false if a path does not exist 1`] = `
+{
+  "user": {
+    "address": {
+      "city": "Anytown",
+      "street": "123 Main St",
+    },
+    "hobbies": [
+      "reading",
+      "gaming",
+      "hiking",
+    ],
+    "name": "John Doe",
+  },
+}
+`;
+
+exports[`Object Path Operations has should return true if a path exists 1`] = `
+{
+  "user": {
+    "address": {
+      "city": "Anytown",
+      "street": "123 Main St",
+    },
+    "hobbies": [
+      "reading",
+      "gaming",
+      "hiking",
+    ],
+    "name": "John Doe",
+  },
+}
+`;
+
+exports[`Object Path Operations set should create nested structures if they do not exist 1`] = `
+{
+  "user": {
+    "address": {
+      "city": "Anytown",
+      "street": "123 Main St",
+    },
+    "contact": {
+      "phone": "123-456-7890",
+    },
+    "hobbies": [
+      "reading",
+      "gaming",
+      "hiking",
+      "swimming",
+    ],
+    "name": "John Doe",
+  },
+}
+`;
+
+exports[`Object Path Operations set should set a value at a given path 1`] = `
+{
+  "user": {
+    "address": {
+      "city": "Anytown",
+      "street": "123 Main St",
+      "zip": "12345",
+    },
+    "age": 30,
+    "hobbies": [
+      "reading",
+      "gaming",
+      "skiing",
+    ],
+    "name": "John Doe",
+  },
+}
+`;
