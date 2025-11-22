@@ -4,7 +4,7 @@
   "description": "manipulate deep objects safely and simply",
   "author": "Dan Lynch <pyramation@gmail.com>",
   "homepage": "https://github.com/pyramation/nested-obj#readme",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "main": "main/index.js",
   "module": "module/index.js",
   "typings": "types/index.d.ts",
