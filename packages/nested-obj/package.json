@@ -3,31 +3,21 @@
   "version": "0.0.1",
   "description": "manipulate deep objects safely and simply",
   "author": "Dan Lynch <pyramation@gmail.com>",
-  "homepage": "https://github.com/pyramation/nested-obj#readme",
+  "homepage": "https://github.com/hyperweb-io/dev-utils",
   "license": "MIT",
-  "main": "main/index.js",
-  "module": "module/index.js",
-  "typings": "types/index.d.ts",
-  "directories": {
-    "lib": "src",
-    "test": "__tests__"
+  "main": "index.js",
+  "module": "esm/index.js",
+  "types": "index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
   },
-  "files": [
-    "types",
-    "module",
-    "src",
-    "main"
-  ],
   "scripts": {
-    "build:main": "yarn tsc -p tsconfig.json --outDir main --module commonjs",
-    "build:module": "yarn tsc -p tsconfig.json --outDir module --module es2022",
-    "build": "npm run build:module && npm run build:main",
-    "buidl": "npm run build",
-    "buidl:clean": "npm run clean && npm run buidl",
-    "clean": "rimraf ./types",
-    "prepare": "npm run build",
-    "lint": "eslint .",
-    "format": "eslint . --fix",
+    "copy": "cpy ../../LICENSE README.md package.json dist --flat",
+    "clean": "rimraf dist/**",
+    "prepublishOnly": "npm run build",
+    "build": "npm run clean; tsc; tsc -p tsconfig.esm.json; npm run copy",
+    "lint": "eslint . --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand"
@@ -42,21 +32,16 @@
       "<rootDir>/node_modules/"
     ],
     "testPathIgnorePatterns": [
-      "main/",
-      "module/",
-      "types/"
+      "dist/"
     ]
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pyramation/nested-obj"
+    "url": "https://github.com/hyperweb-io/dev-utils"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/pyramation/nested-obj/issues"
+    "url": "https://github.com/hyperweb-io/dev-utils/issues"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",

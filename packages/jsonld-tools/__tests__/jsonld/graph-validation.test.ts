@@ -4,7 +4,7 @@ import {
   findOrphans,
   type JsonLdGraph
 } from '../../src/index';
-import enrichedGraph from '../../../../fixtures/graph.json';
+import enrichedGraph from '../../../../__fixtures__/jsonld-tools/graph.json';
 
 describe('Graph Validation Methods', () => {
   describe('findMissingReferences', () => {

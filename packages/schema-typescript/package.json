@@ -3,8 +3,8 @@
   "version": "0.12.1",
   "description": "Convert JSON Schema to TypeScript Definitions",
   "author": "Dan Lynch <pyramation@gmail.com>",
-  "homepage": "https://github.com/hyperweb-io/schema-typescript#readme",
-  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/hyperweb-io/dev-utils",
+  "license": "MIT",
   "main": "index.js",
   "module": "esm/index.js",
   "types": "index.d.ts",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hyperweb-io/schema-typescript"
+    "url": "https://github.com/hyperweb-io/dev-utils"
   },
   "bugs": {
-    "url": "https://github.com/hyperweb-io/schema-typescript/issues"
+    "url": "https://github.com/hyperweb-io/dev-utils/issues"
   },
   "scripts": {
-    "copy": "copyfiles -f ../../LICENSE README.md package.json dist",
+    "copy": "cpy ../../LICENSE README.md package.json dist --flat",
     "clean": "rimraf dist/**",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "npm run clean; tsc; tsc -p tsconfig.esm.json; npm run copy",
     "lint": "eslint . --fix",
     "test": "jest",

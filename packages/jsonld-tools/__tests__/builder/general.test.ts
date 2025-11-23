@@ -7,7 +7,7 @@
 
 import { createJsonLdBuilder, createJsonLdConfig } from '../../src';
 import type { JsonLdEntity, JsonLdGraph } from '../../src';
-import graph from '../../../../fixtures/graph.json';
+import graph from '../../../../__fixtures__/jsonld-tools/graph.json';
 
 describe('JsonLdConfigBuilder', () => {
   test('creates empty config', () => {

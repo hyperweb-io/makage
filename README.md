@@ -214,14 +214,23 @@ When first cloning the repo:
 pnpm install
 
 # Build all packages
-pnpm run build
+pnpm build
 ```
 
-For development with source maps:
+### Available Scripts
 
 ```bash
-# Build with source maps for easier debugging
-pnpm run build:dev
+# Build all packages
+pnpm build
+
+# Clean all build artifacts
+pnpm clean
+
+# Run tests across all packages
+pnpm test
+
+# Lint all packages
+pnpm lint
 ```
 
 ## Disclaimer

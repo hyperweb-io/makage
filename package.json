@@ -15,6 +15,9 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "pnpm -r run build",
+    "clean": "pnpm -r run clean",
+    "test": "pnpm -r run test",
     "lint": "pnpm -r run lint"
   },
   "devDependencies": {
