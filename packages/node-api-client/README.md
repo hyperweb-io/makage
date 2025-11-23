@@ -3,6 +3,13 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/hyperweb-io/dev-utils/refs/heads/main/docs/img/logo.svg" width="80"><br />
     Node.js API Client
+  <br />
+  <a href="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml">
+    <img height="20" src="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml/badge.svg" />
+  </a>
+  <a href="https://github.com/hyperweb-io/dev-utils/blob/main/LICENSE-MIT">
+    <img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/>
+  </a>
 </p>
 
 `@interweb/node-api-client` is a lightweight and flexible HTTP client for interacting with RESTful APIs in Node.js. It supports common HTTP methods such as GET, POST, PUT, PATCH, and DELETE, with customizable options for headers, query parameters, and timeouts.

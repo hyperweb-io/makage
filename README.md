@@ -5,7 +5,12 @@
   <br />
   Open-source development utilities for modern web applications
   <br />
-  <img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg">
+  <a href="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml">
+    <img height="20" src="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml/badge.svg" />
+  </a>
+  <a href="https://github.com/hyperweb-io/dev-utils/blob/main/LICENSE-MIT">
+    <img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg">
+  </a>
 </p>
 
 A comprehensive collection of TypeScript utilities for working with schemas, JSON-LD, API clients, and general-purpose development tools.

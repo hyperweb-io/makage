@@ -1,5 +1,18 @@
 # `jsonldjs`
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/hyperweb-io/dev-utils/refs/heads/main/docs/img/logo.svg" width="80">
+  <br />
+  JSON-LD Tooling
+  <br />
+  <a href="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml">
+    <img height="20" src="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml/badge.svg" />
+  </a>
+  <a href="https://github.com/hyperweb-io/dev-utils/blob/main/LICENSE-MIT">
+    <img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/>
+  </a>
+</p>
+
 A powerful, generic JSON-LD builder with comprehensive entity and property filtering capabilities. Provides both immutable configuration building and mutable graph processing with a fluent interface.
 
 ## Installation
