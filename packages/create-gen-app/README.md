@@ -1,7 +1,7 @@
 # create-gen-app
 
 <p align="center" width="100%">
-    <img height="90" src="https://user-images.githubusercontent.com/545047/190171475-b416f99e-2831-4786-9ba3-a7ff4d95b0d3.svg" />
+    <img height="90" src="https://raw.githubusercontent.com/hyperweb-io/dev-utils/refs/heads/main/docs/img/inquirerer.svg" />
 </p>
 
 <p align="center" width="100%">

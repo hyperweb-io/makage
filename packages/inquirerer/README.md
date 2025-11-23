@@ -1,7 +1,7 @@
 # inquirerer
 
 <p align="center" width="100%">
-    <img height="90" src="https://user-images.githubusercontent.com/545047/190171475-b416f99e-2831-4786-9ba3-a7ff4d95b0d3.svg" />
+    <img height="90" src="https://raw.githubusercontent.com/hyperweb-io/dev-utils/refs/heads/main/docs/img/inquirerer.svg" />
 </p>
 
 <p align="center" width="100%">
@@ -25,15 +25,12 @@ npm install inquirerer
 
 ## Features
 
-- **CLI Integration** - Works seamlessly with command-line arguments
-- 🖊 **Multiple Question Types:** Support for text, autocomplete, checkbox, and confirm questions.
-- **Non-Interactive Mode** - Fallback to defaults for CI/CD environments
-- **Smart Validation** - Built-in pattern matching, custom validators, and sanitizers
-- **Conditional Logic** - Show/hide questions based on previous answers
-- **Interactive UX** - Fuzzy search, keyboard navigation, and visual feedback
-- 🛠 **Customizable Prompts:** Easily configure prompts to include default values, requirement flags, and custom validation rules.
-- 🔎 **Interactive Autocomplete:** Dynamically filter options based on user input.
-- ✔️ **Flexible Checkbox Selections:** Allow users to select multiple options from a list.
+- 🔌 **CLI Builder** - Build command-line utilties fast
+- 🖊 **Multiple Question Types** - Support for text, autocomplete, checkbox, and confirm questions
+- 🤖 **Non-Interactive Mode** - Fallback to defaults for CI/CD environments, great for testing
+- ✅ **Smart Validation** - Built-in pattern matching, custom validators, and sanitizers
+- 🔀 **Conditional Logic** - Show/hide questions based on previous answers
+- 🎨 **Interactive UX** - Fuzzy search, keyboard navigation, and visual feedback
 
 ## Table of Contents
 
