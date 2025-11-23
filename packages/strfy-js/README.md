@@ -10,7 +10,9 @@
   <a href="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml">
     <img height="20" src="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml/badge.svg" />
   </a>
-   <a href="https://github.com/hyperweb-io/dev-utils/blob/main/LICENSE-MIT"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+  <a href="https://github.com/hyperweb-io/dev-utils/blob/main/LICENSE">
+    <img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/>
+  </a>
 </p>
 
 `strfy-js` is a custom JavaScript serialization library designed to extend the capabilities of JSON serialization. This library is particularly useful for generating JavaScript objects directly from JSON, enabling developers to work with JSON data more effectively within JavaScript environments.
