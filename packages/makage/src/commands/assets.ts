@@ -9,7 +9,7 @@ export async function runAssets(_args: string[]) {
   // README + FOOTER -> dist/README.md
   await runReadmeFooter([
     '--source', 'README.md',
-    '--footer', 'FOOTER.md',
+    '--footer', '../../FOOTER.md',
     '--dest', path.join('dist', 'README.md')
   ]);
 }
