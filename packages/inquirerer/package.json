@@ -22,7 +22,7 @@
   "scripts": {
     "copy": "cpy ../../LICENSE README.md package.json dist --flat",
     "clean": "rimraf dist/**",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "npm run clean; tsc; tsc -p tsconfig.esm.json; npm run copy",
     "dev": "ts-node dev/index",
     "test": "jest",
