@@ -9,7 +9,7 @@
   "bin": {
     "makage": "cli.js"
   },
-  "homepage": "https://github.com/hyperweb-io/dev-utils",
+  "homepage": "https://github.com/hyperweb-io/makage",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hyperweb-io/dev-utils"
+    "url": "https://github.com/hyperweb-io/makage"
   },
   "keywords": [
     "build",
@@ -29,7 +29,7 @@
     "package-management"
   ],
   "bugs": {
-    "url": "https://github.com/hyperweb-io/dev-utils/issues"
+    "url": "https://github.com/hyperweb-io/makage/issues"
   },
   "scripts": {
     "copy": "cpy ../../LICENSE README.md package.json dist --flat",

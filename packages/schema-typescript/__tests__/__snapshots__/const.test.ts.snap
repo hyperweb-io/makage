@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
-
-exports[`const 1`] = `
-"export interface Person {
-  firstName: "Dan";
-  age: number;
-  [key: string]: any;
-}"
-`;

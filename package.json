@@ -1,11 +1,11 @@
 {
-  "name": "@interweb/dev-utils",
+  "name": "makage-monorepo",
   "version": "0.0.1",
   "author": "Interweb, Inc. <developers@interweb.co>",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/interweb-io/dev-utils"
+    "url": "https://github.com/hyperweb-io/makage"
   },
   "license": "MIT",
   "publishConfig": {

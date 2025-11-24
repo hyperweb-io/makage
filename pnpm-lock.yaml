@@ -57,206 +57,7 @@ importers:
         specifier: ^5.6.3
         version: 5.9.3
 
-  packages/appstash:
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/create-gen-app:
-    dependencies:
-      inquirerer:
-        specifier: workspace:*
-        version: link:../inquirerer/dist
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/fetch-api-client:
-    dependencies:
-      '@interweb/http-errors':
-        specifier: workspace:*
-        version: link:../http-errors/dist
-      isomorphic-fetch:
-        specifier: ^3.0.0
-        version: 3.0.0(encoding@0.1.13)
-    devDependencies:
-      '@types/isomorphic-fetch':
-        specifier: ^0.0.39
-        version: 0.0.39
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/find-pkg:
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/http-errors:
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/inquirerer:
-    dependencies:
-      deepmerge:
-        specifier: ^4.3.1
-        version: 4.3.1
-      js-yaml:
-        specifier: ^4.1.0
-        version: 4.1.1
-      minimist:
-        specifier: ^1.2.8
-        version: 1.2.8
-      yanse:
-        specifier: workspace:*
-        version: link:../yanse/dist
-    devDependencies:
-      '@types/minimist':
-        specifier: ^1.2.5
-        version: 1.2.5
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/jsonld-tools:
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/komoji:
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
   packages/makage:
-    publishDirectory: dist
-
-  packages/nested-obj:
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/node-api-client:
-    dependencies:
-      '@interweb/http-errors':
-        specifier: workspace:*
-        version: link:../http-errors/dist
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/schema-sdk:
-    dependencies:
-      '@babel/generator':
-        specifier: 7.28.5
-        version: 7.28.5
-      '@babel/parser':
-        specifier: ^7.23.6
-        version: 7.28.5
-      '@babel/traverse':
-        specifier: 7.28.5
-        version: 7.28.5
-      '@babel/types':
-        specifier: 7.28.5
-        version: 7.28.5
-      '@interweb/fetch-api-client':
-        specifier: workspace:*
-        version: link:../fetch-api-client/dist
-      deepmerge:
-        specifier: ^4.3.1
-        version: 4.3.1
-      fast-json-patch:
-        specifier: ^3.1.1
-        version: 3.1.1
-      komoji:
-        specifier: workspace:*
-        version: link:../komoji/dist
-      schema-typescript:
-        specifier: workspace:*
-        version: link:../schema-typescript/dist
-    devDependencies:
-      '@types/babel__generator':
-        specifier: ^7.27.0
-        version: 7.27.0
-      jest-diff:
-        specifier: ^30.0.4
-        version: 30.2.0
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/schema-ts-cli:
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/schema-typescript:
-    dependencies:
-      '@babel/generator':
-        specifier: ^7.28.5
-        version: 7.28.5
-      '@babel/types':
-        specifier: ^7.28.5
-        version: 7.28.5
-      deepmerge:
-        specifier: ^4.3.1
-        version: 4.3.1
-      komoji:
-        specifier: workspace:*
-        version: link:../komoji/dist
-      minimatch:
-        specifier: ^10.1.1
-        version: 10.1.1
-    devDependencies:
-      '@types/babel__generator':
-        specifier: ^7.27.0
-        version: 7.27.0
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-    publishDirectory: dist
-
-  packages/strfy-js:
-    dependencies:
-      minimatch:
-        specifier: ^10.1.1
-        version: 10.1.1
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
-      nested-obj:
-        specifier: workspace:*
-        version: link:../nested-obj/dist
-    publishDirectory: dist
-
-  packages/yanse:
-    devDependencies:
-      makage:
-        specifier: 0.1.3
-        version: 0.1.3
     publishDirectory: dist
 
 packages:
@@ -922,9 +723,6 @@ packages:
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
-
-  '@types/isomorphic-fetch@0.0.39':
-    resolution: {integrity: sha512-I0gou/ZdA1vMG7t7gMzL7VYu2xAKU78rW9U1l10MI0nn77pEHq3tQqHQ8hMmXdMpBlkxZOorjI4sO594Z3kKJw==}
 
   '@types/istanbul-lib-coverage@2.0.6':
     resolution: {integrity: sha512-2QF/t/auWm0lsy8XtKVPG19v3sSOQlJe/YHZgfjb/KBBHOGSV+J2q/S671rcq9uTBrLAXmZpqJiaQbMT+zNU1w==}
@@ -1791,9 +1589,6 @@ packages:
     resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==}
     engines: {node: '>=8.6.0'}
 
-  fast-json-patch@3.1.1:
-    resolution: {integrity: sha512-vf6IHUX2SBcA+5/+4883dsIjpBTqmfBjmYiWK1savxQmFk4JfBMLa7ynTYOs1Rolp/T1betJxHiGD3g1Mn8lUQ==}
-
   fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
 
@@ -2221,9 +2016,6 @@ packages:
     resolution: {integrity: sha512-WhB9zCku7EGTj/HQQRz5aUQEUeoQZH2bWcltRErOpymJ4boYE6wL9Tbr23krRPSZ+C5zqNSrSw+Cc7sZZ4b7vg==}
     engines: {node: '>=0.10.0'}
 
-  isomorphic-fetch@3.0.0:
-    resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
-
   istanbul-lib-coverage@3.2.2:
     resolution: {integrity: sha512-O8dpsF+r0WV/8MNRKfnmrtCWhuKjxrq2w+jpzBL5UZKTi2LeVWnWOmWRxFlesJONmc+wLAGvKQZEOanko0LFTg==}
     engines: {node: '>=8'}
@@ -2542,10 +2334,6 @@ packages:
   lru-cache@6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
-
-  makage@0.1.3:
-    resolution: {integrity: sha512-0AJdf+1dhAIcL5ieDrBKScEpiZ/o0dx+6HKQmbJvOsj0IreaKT6XHboChFoLbi0+geiKR6XuMHfbf9Xk/bPNaw==}
-    hasBin: true
 
   make-dir@2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
@@ -3581,9 +3369,6 @@ packages:
 
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-
-  whatwg-fetch@3.6.20:
-    resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
 
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
@@ -4631,8 +4416,6 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
-  '@types/isomorphic-fetch@0.0.39': {}
-
   '@types/istanbul-lib-coverage@2.0.6': {}
 
   '@types/istanbul-lib-report@3.0.3':
@@ -5503,8 +5286,6 @@ snapshots:
       merge2: 1.4.1
       micromatch: 4.0.8
 
-  fast-json-patch@3.1.1: {}
-
   fast-json-stable-stringify@2.1.0: {}
 
   fast-levenshtein@2.0.6: {}
@@ -5923,13 +5704,6 @@ snapshots:
   isexe@3.1.1: {}
 
   isobject@3.0.1: {}
-
-  isomorphic-fetch@3.0.0(encoding@0.1.13):
-    dependencies:
-      node-fetch: 2.6.7(encoding@0.1.13)
-      whatwg-fetch: 3.6.20
-    transitivePeerDependencies:
-      - encoding
 
   istanbul-lib-coverage@3.2.2: {}
 
@@ -6525,8 +6299,6 @@ snapshots:
   lru-cache@6.0.0:
     dependencies:
       yallist: 4.0.0
-
-  makage@0.1.3: {}
 
   make-dir@2.1.0:
     dependencies:
@@ -7598,8 +7370,6 @@ snapshots:
       defaults: 1.0.4
 
   webidl-conversions@3.0.1: {}
-
-  whatwg-fetch@3.6.20: {}
 
   whatwg-url@5.0.0:
     dependencies:

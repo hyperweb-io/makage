@@ -1,14 +1,14 @@
 # makage
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/hyperweb-io/dev-utils/refs/heads/main/docs/img/logo.svg" width="80">
+  <img src="https://raw.githubusercontent.com/hyperweb-io/makage/refs/heads/main/docs/img/logo.svg" width="80">
   <br />
   Tiny build helper for monorepo packages
   <br />
-  <a href="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml">
-    <img height="20" src="https://github.com/hyperweb-io/dev-utils/actions/workflows/ci.yml/badge.svg" />
+  <a href="https://github.com/hyperweb-io/makage/actions/workflows/ci.yml">
+    <img height="20" src="https://github.com/hyperweb-io/makage/actions/workflows/ci.yml/badge.svg" />
   </a>
-  <a href="https://github.com/hyperweb-io/dev-utils/blob/main/LICENSE">
+  <a href="https://github.com/hyperweb-io/makage/blob/main/LICENSE">
     <img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/>
   </a>
 </p>
@@ -185,3 +185,39 @@ Most monorepo packages need the same basic build operations:
 - Build TypeScript for both CJS and ESM
 
 Instead of installing multiple dependencies (`cpy`, `rimraf`, etc.) in every package, `makage` provides these essentials with zero dependencies, using only Node.js built-in modules.
+
+## Development
+
+### Setup
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/hyperweb-io/makage.git
+```
+
+2. Install dependencies:
+
+```bash
+cd makage
+pnpm install
+pnpm build
+```
+
+3. Test the package:
+
+```bash
+cd packages/makage
+pnpm test:watch
+```
+
+## Credits
+
+Built for developers, with developers.  
+👉 https://launchql.com | https://hyperweb.io
+
+## Disclaimer
+
+AS DESCRIBED IN THE LICENSES, THE SOFTWARE IS PROVIDED "AS IS", AT YOUR OWN RISK, AND WITHOUT WARRANTIES OF ANY KIND.
+
+No developer or entity involved in creating this software will be liable for any claims or damages whatsoever associated with your use, inability to use, or your interaction with other users of the code, including any direct, indirect, incidental, special, exemplary, punitive or consequential damages, or loss of profits, cryptocurrencies, tokens, or anything else of value.
