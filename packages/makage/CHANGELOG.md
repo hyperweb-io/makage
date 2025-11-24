@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/hyperweb-io/makage/compare/makage@0.1.3...makage@0.1.4) (2025-11-24)
+
+**Note:** Version bump only for package makage
+
 ## [0.1.3](https://github.com/hyperweb-io/makage/compare/makage@0.1.2...makage@0.1.3) (2025-11-23)
 
 **Note:** Version bump only for package makage
