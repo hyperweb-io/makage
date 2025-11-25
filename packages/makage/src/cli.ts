@@ -3,6 +3,7 @@ import { runCopy } from './commands/copy';
 import { runClean } from './commands/clean';
 import { runReadmeFooter } from './commands/readmeFooter';
 import { runAssets } from './commands/assets';
+import { runBuild } from './commands/build';
 import { runBuildTs } from './commands/buildTs';
 import { runUpdateWorkspace } from './commands/updateWorkspace';
 
@@ -22,6 +23,9 @@ async function main() {
         break;
       case 'assets':
         await runAssets(rest);
+        break;
+      case 'build':
+        await runBuild(rest);
         break;
       case 'build-ts':
         await runBuildTs(rest);
@@ -46,11 +50,12 @@ function printHelp() {
 makage – tiny build helper
 
 Usage:
+  makage build [--dev]            (clean + build-ts + assets)
   makage clean [path...]          (defaults to "dist")
-  makage copy [...sources] <dest> [--flat]
+  makage copy [...sources] <dest> [--flat] [--footer]
   makage readme-footer --source <file> --footer <file> --dest <file>
   makage assets
-  makage build-ts
+  makage build-ts [--dev]
   makage update-workspace
 `);
 }

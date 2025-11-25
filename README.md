@@ -19,6 +19,8 @@
 
 ## Features
 
+- **One-command builds** - `makage build` runs clean, TypeScript compilation, and asset copying
+- **Development mode** - Add `--dev` for source maps and faster iteration
 - **Cross-platform copy** - Copy files with `--flat` option (replacement for `cpy`)
 - **Cross-platform clean** - Recursively remove directories (replacement for `rimraf`)
 - **README + Footer concatenation** - Combine README with footer content before publishing
@@ -40,33 +42,85 @@ Replace your existing build scripts with `makage`:
 ```json
 {
   "scripts": {
-    "clean": "makage clean",
-    "build": "makage clean && makage build-ts && makage assets",
+    "build": "makage build",
+    "build:dev": "makage build --dev",
     "prepublishOnly": "npm run build"
   }
 }
 ```
+
+## Before & After
+
+See how `makage` simplifies your build scripts:
+
+### Development Builds
+
+**Before:**
+```json
+"build:dev": "npm run clean; tsc -p tsconfig.json --declarationMap; tsc -p tsconfig.esm.json --declarationMap; npm run copy"
+```
+
+**After:**
+```json
+"build:dev": "makage build --dev"
+```
+
+Or if you need more control:
+```json
+"build:dev": "makage clean && makage build-ts --dev && makage copy"
+```
+
+### Copying Files
+
+**Before:**
+```json
+"copy": "copyfiles -f ../../LICENSE README.md package.json dist"
+```
+
+**After:**
+```json
+"copy": "makage copy ../../LICENSE README.md package.json dist --flat"
+```
+
+**Bonus:** Add `--footer` to automatically concatenate your README with a footer:
+```json
+"copy": "makage copy ../../LICENSE README.md package.json dist --flat --footer"
+```
+
+> **Note:** For convenience, `makage assets` combines copy + footer functionality and is kept for backwards compatibility.
 
 ## Usage
 
 ### CLI Commands
 
 ```bash
+# Full build (clean + build-ts + assets)
+makage build
+
+# Full build with development mode (adds --declarationMap)
+makage build --dev
+
 # Clean build directories (defaults to "dist")
 makage clean
 makage clean dist build temp  # or specify multiple directories
 
+# Build TypeScript (both CJS and ESM)
+makage build-ts
+
+# Build TypeScript with source maps for development
+makage build-ts --dev
+
 # Copy files to destination
 makage copy ../../LICENSE README.md package.json dist --flat
 
-# Concatenate README with footer
-makage readme-footer --source README.md --footer FOOTER.md --dest dist/README.md
+# Copy with automatic README + footer concatenation
+makage copy ../../LICENSE README.md package.json dist --flat --footer
 
 # Copy standard assets (LICENSE, package.json, README+FOOTER)
 makage assets
 
-# Build TypeScript (both CJS and ESM)
-makage build-ts
+# Concatenate README with footer (lower-level command)
+makage readme-footer --source README.md --footer FOOTER.md --dest dist/README.md
 
 # Update workspace dependencies
 makage update-workspace

@@ -17,6 +17,66 @@
 
 > **makage** = `make` + `package`. A delightful portmanteau, like brunch for build tools—except makage actually gets things done.
 
+## Install
+
+```sh
+npm install makage
+```
+
+## Quick Start
+
+Replace your existing build scripts with `makage`:
+
+```json
+{
+  "scripts": {
+    "build": "makage build",
+    "build:dev": "makage build --dev",
+    "prepublishOnly": "npm run build"
+  }
+}
+```
+
+## Before & After
+
+See how `makage` simplifies your build scripts:
+
+### Development Builds
+
+**Before:**
+```json
+"build:dev": "npm run clean; tsc -p tsconfig.json --declarationMap; tsc -p tsconfig.esm.json --declarationMap; npm run copy"
+```
+
+**After:**
+```json
+"build:dev": "makage build --dev"
+```
+
+Or if you need more control:
+```json
+"build:dev": "makage clean && makage build-ts --dev && makage copy"
+```
+
+### Copying Files
+
+**Before:**
+```json
+"copy": "copyfiles -f ../../LICENSE README.md package.json dist"
+```
+
+**After:**
+```json
+"copy": "makage copy ../../LICENSE README.md package.json dist --flat"
+```
+
+**Bonus:** Add `--footer` to automatically concatenate your README with a footer:
+```json
+"copy": "makage copy ../../LICENSE README.md package.json dist --flat --footer"
+```
+
+> **Note:** For convenience, `makage assets` combines copy + footer functionality and is kept for backwards compatibility.
+
 ## Assumptions
 
 This tool is designed for monorepos that follow a specific package structure. If you use packages the way we do, `makage` assumes:
@@ -33,7 +93,9 @@ These conventions allow for clean package distribution while maintaining a modul
 
 ## Features
 
-- **Cross-platform copy** - Copy files with `--flat` option (replacement for `cpy`)
+- **One-command builds** - `makage build` runs clean, TypeScript compilation, and asset copying
+- **Development mode** - Add `--dev` for source maps and faster iteration
+- **Cross-platform copy** - Copy files with `--flat` and `--footer` options (replacement for `cpy`)
 - **Cross-platform clean** - Recursively remove directories (replacement for `rimraf`)
 - **README + Footer concatenation** - Combine README with footer content before publishing
 - **Assets helper** - One-command copying of LICENSE, README, and package.json
@@ -41,64 +103,55 @@ These conventions allow for clean package distribution while maintaining a modul
 - **Update workspace dependencies** - Automatically convert internal package references to `workspace:*`
 - **Zero dependencies** - Uses only Node.js built-in modules
 
-## Install
-
-```sh
-npm install makage
-```
-
 ## Usage
 
 ### CLI Commands
 
 ```bash
+# Full build (clean + build-ts + assets)
+makage build
+
+# Full build with development mode (adds --declarationMap)
+makage build --dev
+
 # Clean build directories (defaults to "dist")
 makage clean
 makage clean dist build temp  # or specify multiple directories
 
+# Build TypeScript (both CJS and ESM)
+makage build-ts
+
+# Build TypeScript with source maps for development
+makage build-ts --dev
+
 # Copy files to destination
 makage copy ../../LICENSE README.md package.json dist --flat
 
-# Concatenate README with footer
-makage readme-footer --source README.md --footer FOOTER.md --dest dist/README.md
+# Copy with automatic README + footer concatenation
+makage copy ../../LICENSE README.md package.json dist --flat --footer
 
 # Copy standard assets (LICENSE, package.json, README+FOOTER)
 makage assets
 
-# Build TypeScript (both CJS and ESM)
-makage build-ts
+# Concatenate README with footer (lower-level command)
+makage readme-footer --source README.md --footer FOOTER.md --dest dist/README.md
 
 # Update workspace dependencies
 makage update-workspace
 ```
 
-### Package.json Scripts
-
-Replace your existing build scripts with `makage`:
-
-```json
-{
-  "scripts": {
-    "clean": "makage clean",
-    "build": "makage clean && makage build-ts && makage assets",
-    "prepublishOnly": "npm run build"
-  }
-}
-```
-
-Or using the simplified pattern:
-
-```json
-{
-  "scripts": {
-    "copy": "makage assets",
-    "clean": "makage clean",
-    "build": "npm run clean && tsc && tsc -p tsconfig.esm.json && npm run copy"
-  }
-}
-```
-
 ## Commands
+
+### `makage build [--dev]`
+
+Complete build workflow that runs clean, build-ts, and assets in sequence.
+
+- Use `--dev` to enable source maps via `--declarationMap` flag
+
+```bash
+makage build       # production build
+makage build --dev # development build with source maps
+```
 
 ### `makage clean [path...]`
 
@@ -109,15 +162,17 @@ makage clean              # removes dist
 makage clean dist build temp  # removes multiple directories
 ```
 
-### `makage copy [...sources] <dest> [--flat]`
+### `makage copy [...sources] <dest> [--flat] [--footer]`
 
 Copy files to a destination directory.
 
 - Use `--flat` to copy files directly into the destination without preserving directory structure
+- Use `--footer` to automatically concatenate README.md with ../../FOOTER.md during copy
 - Last argument is the destination, all others are sources
 
 ```bash
 makage copy ../../LICENSE README.md dist --flat
+makage copy ../../LICENSE README.md package.json dist --flat --footer
 ```
 
 ### `makage readme-footer --source <file> --footer <file> --dest <file>`
@@ -139,14 +194,17 @@ Combines common asset copying tasks:
 makage assets
 ```
 
-### `makage build-ts`
+### `makage build-ts [--dev]`
 
 Runs TypeScript compilation for both CommonJS and ESM:
 1. `tsc` (CommonJS)
 2. `tsc -p tsconfig.esm.json` (ESM)
 
+- Use `--dev` to add `--declarationMap` for better debugging experience
+
 ```bash
-makage build-ts
+makage build-ts       # production build
+makage build-ts --dev # development build with source maps
 ```
 
 ### `makage update-workspace`
@@ -164,20 +222,6 @@ This will:
 2. Identify internal package names
 3. Update all dependencies, devDependencies, peerDependencies, and optionalDependencies
 4. Convert version numbers to `workspace:*` for internal packages
-
-## Programmatic Usage
-
-You can also use `makage` commands programmatically:
-
-```typescript
-import { runCopy, runClean, runAssets } from 'makage';
-
-async function build() {
-  await runClean([]);  // defaults to ['dist']
-  // ... your build steps
-  await runAssets([]);
-}
-```
 
 ## Why makage?
 

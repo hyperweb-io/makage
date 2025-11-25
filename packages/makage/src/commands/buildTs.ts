@@ -10,10 +10,15 @@ function run(cmd: string, args: string[]): Promise<void> {
   });
 }
 
-export async function runBuildTs(_args: string[]) {
-  console.log('[makage] tsc (CJS)');
-  await run('tsc', []);
+export async function runBuildTs(args: string[]) {
+  const isDev = args.includes('--dev');
 
-  console.log('[makage] tsc (ESM)');
-  await run('tsc', ['-p', 'tsconfig.esm.json']);
+  const tscArgs = isDev ? ['--declarationMap'] : [];
+  const esmArgs = ['-p', 'tsconfig.esm.json', ...(isDev ? ['--declarationMap'] : [])];
+
+  console.log(`[makage] tsc (CJS)${isDev ? ' [dev mode]' : ''}`);
+  await run('tsc', tscArgs);
+
+  console.log(`[makage] tsc (ESM)${isDev ? ' [dev mode]' : ''}`);
+  await run('tsc', esmArgs);
 }
