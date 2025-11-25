@@ -21,7 +21,8 @@
 
 - **One-command builds** - `makage build` runs clean, TypeScript compilation, and asset copying
 - **Development mode** - Add `--dev` for source maps and faster iteration
-- **Cross-platform copy** - Copy files with `--flat` option (replacement for `cpy`)
+- **Glob pattern support** - Copy files using patterns like `src/**/*.sql` (replacement for `copyfiles`)
+- **Cross-platform copy** - Copy files with `--flat` and `--footer` options (replacement for `cpy`)
 - **Cross-platform clean** - Recursively remove directories (replacement for `rimraf`)
 - **README + Footer concatenation** - Combine README with footer content before publishing
 - **Assets helper** - One-command copying of LICENSE, README, and package.json
@@ -87,6 +88,23 @@ Or if you need more control:
 "copy": "makage copy ../../LICENSE README.md package.json dist --flat --footer"
 ```
 
+### Copying with Glob Patterns
+
+**Before:**
+```json
+"copy:sql": "copyfiles -f src/migrate/sql/* dist/migrate/sql && copyfiles -f src/migrate/sql/* dist/esm/migrate/sql"
+```
+
+**After:**
+```json
+"copy:sql": "makage copy src/migrate/sql/* dist/migrate/sql --flat && makage copy src/migrate/sql/* dist/esm/migrate/sql --flat"
+```
+
+Or with recursive patterns:
+```json
+"copy:all-sql": "makage copy src/**/*.sql dist/sql --flat"
+```
+
 > **Note:** For convenience, `makage assets` combines copy + footer functionality and is kept for backwards compatibility.
 
 ## Usage
@@ -112,6 +130,10 @@ makage build-ts --dev
 
 # Copy files to destination
 makage copy ../../LICENSE README.md package.json dist --flat
+
+# Copy files with glob patterns
+makage copy src/migrate/sql/* dist/migrate/sql --flat
+makage copy src/**/*.sql dist/sql --flat
 
 # Copy with automatic README + footer concatenation
 makage copy ../../LICENSE README.md package.json dist --flat --footer
