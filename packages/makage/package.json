@@ -39,5 +39,8 @@
     "lint": "eslint . --fix",
     "test": "jest",
     "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.11"
   }
 }
